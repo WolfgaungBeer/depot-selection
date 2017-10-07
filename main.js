@@ -9,7 +9,6 @@ let mainWindow;
 const createWindow = () => {
     mainWindow = new BrowserWindow({ width: 1200, height: 600 });
     mainWindow.loadURL(fileUrl);
-    mainWindow.webContents.openDevTools();
     mainWindow.on('closed', () => {
         mainWindow = null;
     });
