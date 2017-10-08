@@ -1,8 +1,12 @@
 @import "reset";
+@import "fonts";
+@import "icons";
 @import "variables";
 @import "grid";
 @import "mixins";
 
 @import "components/app";
-@import "components/aside";
+@import "components/sidemenu";
+@import "components/apptitle";
+@import "components/icon";
 @import "components/main";

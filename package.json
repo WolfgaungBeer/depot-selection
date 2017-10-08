@@ -19,7 +19,10 @@
   },
   "homepage": "https://github.com/WolfgaungBeer/depot-selection#readme",
   "dependencies": {
+    "chart.js": "^2.7.0",
+    "csvtojson": "^1.1.9",
     "electron": "^1.7.8",
+    "material-design-icons": "^3.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -40,9 +43,11 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.4.0",
+    "file-loader": "^1.1.5",
     "node-sass": "^4.5.3",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
     "webpack": "^3.6.0",
     "webpack-dev-server": "^2.9.1"
   }

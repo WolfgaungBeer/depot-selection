@@ -1,10 +1,10 @@
 import React from 'react';
-import Aside from '../Aside';
+import SideMenu from '../SideMenu';
 import Main from '../Main';
 
 const App = () => (
     <div id="app">
-        <Aside />
+        <SideMenu />
         <Main />
     </div>
 );

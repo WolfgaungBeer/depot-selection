@@ -1,6 +1,7 @@
 import path from 'path';
 import url from 'url';
 import { app, BrowserWindow } from 'electron';
+import './main-process/open-file-dialog';
 
 const filePath = path.join(__dirname, './bin/index.html');
 const fileUrl = url.format({ pathname: filePath, protocol: 'file:', slashes: true });

@@ -1,0 +1,16 @@
+#apptitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include font($header-font, $color--white, $font-scale--xl);
+    $borderColor: lighten($color--darkGray, 25%);
+    @include bottomBorder($borderColor, 1px);
+}
+
+.apptitle-wrapper {
+    padding: 1rem 0;
+
+    .icon {
+        padding-right: 0.5rem;
+    }
+}

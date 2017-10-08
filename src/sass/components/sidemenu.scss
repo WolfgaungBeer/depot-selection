@@ -1,0 +1,4 @@
+#sidemenu {
+    @include positionedContainer(absolute, 0px, 0px, $sidemenu-width, 100%);
+    background-color: $color--darkGray;
+}

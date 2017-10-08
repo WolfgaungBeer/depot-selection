@@ -6,8 +6,11 @@ $color--info: #48C5FC;
 $color--success: #37B661;
 $color--warning: #DD9913;
 $color--error: #E25650;
-$color--primary: #3F51B5;
-$color--secondary: #FFC107;
+$color--primary: #2196f3;
+$color--secondary: #ec407a;
+
+$header-font: 'Playfair Display', serif;
+$main-font: 'Ubuntu', sans-serif;
 
 $font-scale--xxs: 0.25rem;
 $font-scale--xs: 0.5rem;
@@ -18,4 +21,4 @@ $font-scale--xl: 1.6rem;
 $font-scale--xxl: 2rem;
 $font-scale--xxxl: 3rem;
 
-$sidebar-width: 200px;
+$sidemenu-width: 25%;

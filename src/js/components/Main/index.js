@@ -1,7 +1,9 @@
 import React from 'react';
 
 const Main = () => (
-    <main id="main">Main Component</main>
+    <div id="main">
+        main
+    </div>
 );
 
 export default Main;

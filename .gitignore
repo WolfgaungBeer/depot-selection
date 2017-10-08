@@ -1,3 +1,4 @@
 node_modules/
 main.compiled.js
-bin/app.bundle.js
+bin/*
+!bin/index.html
