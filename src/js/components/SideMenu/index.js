@@ -1,9 +1,8 @@
 import React from 'react';
-import AppTitle from '../AppTitle';
 
 const SideMenu = () => (
     <div id="sidemenu">
-        <AppTitle title="Depot Selection" />
+        <h1>side menu</h1>
     </div>
 );
 

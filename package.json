@@ -6,7 +6,7 @@
   "scripts": {
     "compile": "babel main.js --out-file main.compiled.js && webpack",
     "start": "npm run compile && electron .",
-    "dev-server": "webpack-dev-server --content-base ./bin"
+    "dev-server": "webpack-dev-server --content-base ./bin --history-api-fallback"
   },
   "repository": {
     "type": "git",
@@ -22,11 +22,11 @@
     "chart.js": "^2.7.0",
     "csvtojson": "^1.1.9",
     "electron": "^1.7.8",
-    "material-design-icons": "^3.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
     "susy": "^3.0.1"
   },
