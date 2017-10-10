@@ -5,6 +5,12 @@
 @import "grid";
 @import "mixins";
 
+@import "components/icon";
+@import "components/spacing";
+@import "components/nav";
+@import "components/navlink";
+
 @import "components/app";
-@import "components/sidemenu";
+@import "components/side-menu";
+@import "components/side-menu-header";
 @import "components/main";
