@@ -1,5 +1,0 @@
-#main {
-    $width: calc(100% - #{$sidemenu-width});
-    @include positionedContainer(absolute, 0px, $sidemenu-width, $width, 100%);
-    background-color: $color--white;
-}

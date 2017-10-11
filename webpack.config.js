@@ -1,14 +1,19 @@
 const path = require('path');
 
 module.exports = {
-
     entry: [
-        './src/js/index.js',
+        './src/index.js',
     ],
 
     output: {
         filename: 'app.bundle.js',
         path: path.resolve(__dirname, 'bin'),
+    },
+
+    resolve: {
+        alias: {
+            scado: path.resolve(__dirname, 'src/components/'),
+        },
     },
 
     module: {
@@ -19,11 +24,10 @@ module.exports = {
                 loader: 'babel-loader',
             },
             {
-                test: /\.scss/,
+                test: /\.css/,
                 use: [
                     'style-loader',
                     'css-loader',
-                    'sass-loader',
                 ],
             },
             {
