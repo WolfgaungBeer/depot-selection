@@ -10,8 +10,8 @@ export default {
     iconClassName: 'material-icons',
 
     fonts: {
-        heading: '"Josefin Sans", sans-serif',
-        paragraph: '"Raleway", sans-serif',
+        heading: '"Droid Serif", serif',
+        paragraph: '"Ubuntu", sans-serif',
     },
 
     color: {

@@ -28,6 +28,7 @@ const Icon = ({ color, scale, onClick, children }) => {
                     color: ${theme.color[color]};
                     font-size: ${theme.fontScale[scale]};
                     ${onClick && 'cursor: pointer;'};
+                    vertical-align: -15%;
                 }
             `}</style>
         </i>
