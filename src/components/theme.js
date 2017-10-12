@@ -38,4 +38,11 @@ export default {
         xxxl: '3rem',
     },
 
+    padding: {
+        s: '0.5rem',
+        m: '1rem',
+        l: '2rem',
+        xl: '3rem',
+    },
+
 };
