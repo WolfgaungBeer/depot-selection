@@ -1,10 +1,13 @@
 import React from 'react';
 import SideBar from './components/SideBar';
 import Main from './components/Main';
+import SideBarHeader from './components/SideBarHeader';
 
 const App = () => (
     <div>
-        <SideBar />
+        <SideBar>
+            <SideBarHeader />
+        </SideBar>
         <Main />
         <style jsx>{`
             div {

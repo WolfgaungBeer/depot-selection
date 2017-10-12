@@ -26,7 +26,7 @@ export default {
         s: '0.8rem',
         m: '1rem',
         l: '1.2rem',
-        xl: '1.6rem',
+        xl: '1.4rem',
         xxl: '2rem',
         xxxl: '3rem',
     },
