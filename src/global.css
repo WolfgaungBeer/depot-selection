@@ -52,3 +52,15 @@ a {
     -moz-osx-font-smoothing: grayscale;
     font-feature-settings: 'liga';
 }
+
+.scado-icon {
+    /* nothing right now */
+}
+
+.scado-text {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.scado-text-heading {
+    font-family: 'Droid Serif', serif;
+}

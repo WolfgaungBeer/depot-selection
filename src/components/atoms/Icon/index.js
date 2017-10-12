@@ -1,6 +1,5 @@
 import React from 'react';
 import { string, func, node } from 'prop-types';
-import theme from '../../theme';
 
 const propTypes = {
     color: string,
@@ -17,16 +16,16 @@ const defaultProps = {
 };
 
 const Icon = ({ color, scale, onClick, children }) => {
-    const buttonProps = { className: theme.iconClassName, onClick, role: 'button', tabIndex: 0 };
-    const iconProps = { className: theme.iconClassName };
+    const buttonProps = { className: 'material-icons scado-icon', onClick, role: 'button', tabIndex: 0 };
+    const iconProps = { className: 'material-icons scado-icon' };
     const props = onClick ? buttonProps : iconProps;
     return (
         <i {...props}>
             {children}
             <style jsx>{`
                 i {
-                    color: ${theme.color[color]};
-                    font-size: ${theme.fontScale[scale]};
+                    color: ${color};
+                    font-size: ${scale};
                     ${onClick && 'cursor: pointer;'};
                     vertical-align: -15%;
                 }

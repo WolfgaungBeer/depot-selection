@@ -7,13 +7,6 @@ export default {
         xl: '1600px',
     },
 
-    iconClassName: 'material-icons',
-
-    fonts: {
-        heading: '"Droid Serif", serif',
-        paragraph: '"Ubuntu", sans-serif',
-    },
-
     color: {
         black: '#202021',
         white: '#F7F7F7',
@@ -27,7 +20,7 @@ export default {
         secondary: '#FFC107',
     },
 
-    fontScale: {
+    scale: {
         xxs: '0.25rem',
         xs: '0.5rem',
         s: '0.8rem',
@@ -38,11 +31,8 @@ export default {
         xxxl: '3rem',
     },
 
-    padding: {
-        s: '0.5rem',
-        m: '1rem',
-        l: '2rem',
-        xl: '3rem',
+    app: {
+        sideMenuWidth: '250px',
     },
 
 };

@@ -1,6 +1,5 @@
 import React from 'react';
 import { string, bool, node } from 'prop-types';
-import theme from '../../theme';
 
 const propTypes = {
     color: string,
@@ -17,13 +16,12 @@ const defaultProps = {
 };
 
 const Text = ({ color, scale, heading, children }) => (
-    <span>
+    <span className={heading ? 'scado-text-heading' : 'scado-text'}>
         {children}
         <style jsx>{`
             span {
-                color: ${theme.color[color]};
-                font-size: ${theme.fontScale[scale]};
-                font-family: ${heading ? theme.fonts.heading : theme.fonts.paragraph};
+                color: ${color};
+                font-size: ${scale};
             }
         `}</style>
     </span>
