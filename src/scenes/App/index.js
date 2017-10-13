@@ -6,7 +6,7 @@ import SideBarHeader from './components/SideBarHeader';
 const App = () => (
     <div>
         <SideBar>
-            <SideBarHeader />
+            <SideBarHeader title="Depot Selection" />
         </SideBar>
         <Main />
         <style jsx>{`

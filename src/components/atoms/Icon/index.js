@@ -5,6 +5,7 @@ const propTypes = {
     color: string,
     scale: string,
     onClick: func,
+    injectStyle: func,
     children: node,
 };
 
@@ -12,10 +13,11 @@ const defaultProps = {
     color: undefined,
     scale: undefined,
     onClick: undefined,
+    injectStyle: undefined,
     children: undefined,
 };
 
-const Icon = ({ color, scale, onClick, children }) => {
+const Icon = ({ color, scale, onClick, injectStyle, children }) => {
     const buttonProps = { className: 'material-icons scado-icon', onClick, role: 'button', tabIndex: 0 };
     const iconProps = { className: 'material-icons scado-icon' };
     const props = onClick ? buttonProps : iconProps;
@@ -28,6 +30,7 @@ const Icon = ({ color, scale, onClick, children }) => {
                     font-size: ${scale};
                     ${onClick && 'cursor: pointer;'};
                     vertical-align: -15%;
+                    ${injectStyle && injectStyle({ color, scale })}
                 }
             `}</style>
         </i>

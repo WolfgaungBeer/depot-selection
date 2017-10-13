@@ -1,5 +1,5 @@
 import React from 'react';
-import { string, bool, node } from 'prop-types';
+import { string, bool, func, node } from 'prop-types';
 
 const propTypes = {
     size: string,
@@ -7,6 +7,7 @@ const propTypes = {
     left: bool,
     bottom: bool,
     right: bool,
+    injectStyle: func,
     children: node,
 };
 
@@ -16,6 +17,7 @@ const defaultProps = {
     left: undefined,
     bottom: undefined,
     right: undefined,
+    injectStyle: undefined,
     children: undefined,
 };
 
@@ -27,12 +29,13 @@ const style = (size, top, left, bottom, right) => {
     return `padding-${pos}: ${size || '1rem'};`;
 };
 
-const Spacing = ({ size, top, left, bottom, right, children }) => (
+const Spacing = ({ size, top, left, bottom, right, injectStyle, children }) => (
     <div>
         {children}
         <style jsx>{`
             div {
                 ${style(size, top, left, bottom, right)}
+                ${injectStyle && injectStyle({ size, top, left, bottom, right })}
             }
         `}</style>
     </div>

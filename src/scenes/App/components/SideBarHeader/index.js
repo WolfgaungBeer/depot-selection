@@ -1,32 +1,28 @@
 import React from 'react';
-import { node } from 'prop-types';
+import { string } from 'prop-types';
 import { Flex, Icon, Text } from 'scado';
 import theme from '../../../theme';
+import { flexStyle } from './style';
 
 const { color, scale } = theme;
 
 const propTypes = {
-    children: node,
+    title: string,
 };
 
 const defaultProps = {
-    children: undefined,
+    title: undefined,
 };
 
-const SideBarHeader = ({ children }) => (
-    <Flex justifyContent="center" alignItems="center">
+const SideBarHeader = ({ title }) => (
+    <Flex justifyContent="center" alignItems="center" injectStyle={flexStyle}>
         <div>
             <Icon color={color.lightGray} scale={scale.xl}>apps</Icon>
-            <Text color={color.lightGray} scale={scale.xl} heading>Depot Selection</Text>
-            <style jsx>{`
-                div {
-                    padding: 1rem 0;
-                    border-bottom-style: solid;
-                    border-bottom-color: ${color.lightGray};
-                    border-bottom-width: 1px;
-                }
-            `}</style>
+            <Text color={color.lightGray} scale={scale.xl} heading>{title}</Text>
         </div>
+        <style jsx>{`
+            div { padding: 1rem 0; }
+        `}</style>
     </Flex>
 );
 

@@ -1,10 +1,11 @@
 import React from 'react';
-import { bool, string, node } from 'prop-types';
+import { bool, string, func, node } from 'prop-types';
 
 const propTypes = {
     inline: bool,
     justifyContent: string,
     alignItems: string,
+    injectStyle: func,
     children: node,
 };
 
@@ -12,10 +13,11 @@ const defaultProps = {
     inline: undefined,
     justifyContent: undefined,
     alignItems: undefined,
+    injectStyle: undefined,
     children: undefined,
 };
 
-const Flex = ({ inline, justifyContent, alignItems, children }) => (
+const Flex = ({ inline, justifyContent, alignItems, injectStyle, children }) => (
     <div>
         {children}
         <style jsx>{`
@@ -23,6 +25,7 @@ const Flex = ({ inline, justifyContent, alignItems, children }) => (
                 display: ${inline ? 'inline-flex' : 'flex'};
                 justify-content: ${justifyContent || 'flex-start'};
                 align-items: ${alignItems || 'stretch'};
+                ${injectStyle && injectStyle({ inline, justifyContent, alignItems })}
             }
         `}</style>
     </div>
