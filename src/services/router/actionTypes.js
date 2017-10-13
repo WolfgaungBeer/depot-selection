@@ -1,0 +1,1 @@
+export const UPDATE_ROUTE = '@ROUTER/UPDATE_ROUTE';

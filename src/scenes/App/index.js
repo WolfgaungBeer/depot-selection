@@ -1,14 +1,28 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
+import { Spacing, Icon } from 'scado';
 import SideBar from './components/SideBar';
 import Main from './components/Main';
 import SideBarHeader from './components/SideBarHeader';
+import SideBarMenu from './components/SideBarMenu';
+import MenuItem from './components/MenuItem';
 
 const App = () => (
     <div>
         <SideBar>
-            <SideBarHeader title="Depot Selection" />
+            <SideBarHeader icon="dashboard" title="Depot Selection" />
+            <Spacing size="3rem" top />
+            <SideBarMenu>
+                <MenuItem to="/depots" icon="pie_chart" text="Depots" />
+                <MenuItem to="/stocks" icon="show_chart" text="Aktien" />
+            </SideBarMenu>
         </SideBar>
-        <Main />
+        <Main>
+            <Switch>
+                <Route path="/depots" render={() => <span>depots</span>} />
+                <Route path="/stocks" render={() => <span>aktien</span>} />
+            </Switch>
+        </Main>
         <style jsx>{`
             div {
                 position: fixed;

@@ -7,17 +7,19 @@ import { flexStyle } from './style';
 const { color, scale } = theme;
 
 const propTypes = {
+    icon: string,
     title: string,
 };
 
 const defaultProps = {
+    icon: undefined,
     title: undefined,
 };
 
-const SideBarHeader = ({ title }) => (
+const SideBarHeader = ({ icon, title }) => (
     <Flex justifyContent="center" alignItems="center" injectStyle={flexStyle}>
         <div>
-            <Icon color={color.lightGray} scale={scale.xl}>apps</Icon>
+            <Icon color={color.lightGray} scale={scale.xl}>{icon}</Icon>
             <Text color={color.lightGray} scale={scale.xl} heading>{title}</Text>
         </div>
         <style jsx>{`
