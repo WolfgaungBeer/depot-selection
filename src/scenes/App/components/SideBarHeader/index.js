@@ -1,8 +1,7 @@
 import React from 'react';
 import { string } from 'prop-types';
-import { Flex, Icon, Text } from 'scado';
+import { Flex, Spacing, Icon, Text } from 'scado';
 import theme from '../../../theme';
-import { flexStyle } from './style';
 
 const { color, scale } = theme;
 
@@ -17,15 +16,23 @@ const defaultProps = {
 };
 
 const SideBarHeader = ({ icon, title }) => (
-    <Flex justifyContent="center" alignItems="center" injectStyle={flexStyle}>
-        <div>
-            <Icon color={color.lightGray} scale={scale.xl}>{icon}</Icon>
+    <div>
+        <Flex justifyContent="center" alignItems="center">
+            <Spacing size="0.5rem" right>
+                <Icon color={color.secondary} scale={scale.xl}>{icon}</Icon>
+            </Spacing>
             <Text color={color.lightGray} scale={scale.xl} heading>{title}</Text>
-        </div>
+        </Flex>
         <style jsx>{`
-            div { padding: 1rem 0; }
+            div {
+                width: 100%;
+                height: 4rem;
+                border-bottom-style: solid;
+                border-bottom-width: 1px;
+                border-bottom-color: ${theme.color.lightGray};
+            }
         `}</style>
-    </Flex>
+    </div>
 );
 
 SideBarHeader.propTypes = propTypes;

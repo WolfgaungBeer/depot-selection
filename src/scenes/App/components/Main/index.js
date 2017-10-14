@@ -20,7 +20,7 @@ const Main = ({ children }) => (
                 left: ${theme.app.sideMenuWidth};
                 width: calc(100% - ${theme.app.sideMenuWidth});
                 height: 100%;
-                background-color: ${theme.color.white};
+                background-color: ${theme.app.backgroundColor};
             }
         `}</style>
     </div>

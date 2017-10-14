@@ -6,6 +6,9 @@ import Main from './components/Main';
 import SideBarHeader from './components/SideBarHeader';
 import SideBarMenu from './components/SideBarMenu';
 import MenuItem from './components/MenuItem';
+import Home from '../Home';
+import Stocks from '../Stocks';
+import Depots from '../Depots';
 
 const App = () => (
     <div>
@@ -13,14 +16,16 @@ const App = () => (
             <SideBarHeader icon="dashboard" title="Depot Selection" />
             <Spacing size="3rem" top />
             <SideBarMenu>
+                <MenuItem to="/" icon="home" text="Home" />
                 <MenuItem to="/depots" icon="pie_chart" text="Depots" />
                 <MenuItem to="/stocks" icon="show_chart" text="Aktien" />
             </SideBarMenu>
         </SideBar>
         <Main>
             <Switch>
-                <Route path="/depots" render={() => <span>depots</span>} />
-                <Route path="/stocks" render={() => <span>aktien</span>} />
+                <Route path="/" exact component={Home} />
+                <Route path="/depots" component={Depots} />
+                <Route path="/stocks" component={Stocks} />
             </Switch>
         </Main>
         <style jsx>{`

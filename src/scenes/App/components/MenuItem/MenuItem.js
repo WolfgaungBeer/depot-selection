@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Flex, Icon, Text } from 'scado';
 import theme from '../../../theme';
 
-const { color, scale } = theme;
+const { color, scale, app } = theme;
 
 const propTypes = {
     active: bool,
@@ -40,7 +40,7 @@ const MenuItem = ({ active, to, icon, text }) => (
                 height: 0;
                 border-style: solid;
                 border-width: 10px 10px 10px 0;
-                border-color: transparent ${color.white} transparent transparent;
+                border-color: transparent ${app.backgroundColor} transparent transparent;
             }
         `}</style>
     </Link>

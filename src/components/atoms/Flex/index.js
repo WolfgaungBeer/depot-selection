@@ -22,6 +22,8 @@ const Flex = ({ inline, justifyContent, alignItems, injectStyle, children }) => 
         {children}
         <style jsx>{`
             div {
+                width: 100%;
+                height: 100%;
                 display: ${inline ? 'inline-flex' : 'flex'};
                 justify-content: ${justifyContent || 'flex-start'};
                 align-items: ${alignItems || 'stretch'};
