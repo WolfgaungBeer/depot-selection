@@ -1,38 +1,20 @@
 import React from 'react';
 import { Grid, Panel, Flex, Spacing, Text } from 'scado';
-import gridProps from './grid';
+import gridConfig from './gridConfig';
 import theme from '../theme';
-
-const { color } = theme;
-
-const propTypes = {
-};
-
-const defaultProps = {
-};
-
 
 const Home = () => (
     <div className="flex-container">
         <div className="inner-wrapper">
-            <Grid.Parent {...gridProps}>
-                <Grid.Child area="header">
-                    <Panel color={color.white} shadow borderRadius="2px">
-                        <Flex alignItems="center">
-                            <Spacing size="1rem" left>
-                                <Text>Ein Depot auswählen um es auszuwerten:</Text>
-                            </Spacing>
-                        </Flex>
-                    </Panel>
-                </Grid.Child>
+            <Grid.Parent {...gridConfig}>
                 <Grid.Child area="main">
-                    <Panel color={color.white} shadow borderRadius="2px">test</Panel>
+                    <Panel color={theme.color.white} shadow borderRadius="2px">main chart</Panel>
                 </Grid.Child>
                 <Grid.Child area="footer-left">
-                    <Panel color={color.white} shadow borderRadius="2px">test</Panel>
+                    <Panel color={theme.color.white} shadow borderRadius="2px">detail chart 1</Panel>
                 </Grid.Child>
                 <Grid.Child area="footer-right">
-                    <Panel color={color.white} shadow borderRadius="2px">test</Panel>
+                    <Panel color={theme.color.white} shadow borderRadius="2px">detail chart 2</Panel>
                 </Grid.Child>
             </Grid.Parent>
         </div>
@@ -51,8 +33,5 @@ const Home = () => (
         `}</style>
     </div>
 );
-
-Home.propTypes = propTypes;
-Home.defaultProps = defaultProps;
 
 export default Home;

@@ -1,8 +1,12 @@
-const ipc = require('electron').ipcMain;
-const dialog = require('electron').dialog;
+const { ipcMain, dialog, app } = require('electron');
 
-ipc.on('open-file-dialog', (event) => {
-    dialog.showOpenDialog({ properties: ['openFile', 'openDirectory', 'multiSelections'] }, (files) => {
+ipcMain.on('open-file-dialog', (event) => {
+    dialog.showOpenDialog({ properties: ['openFile'] }, (files) => {
         if (files) event.sender.send('selected-directory', files);
     });
+});
+
+ipcMain.on('get-user-home-dir', (event) => {
+    const appData = app.getPath('appData');
+    event.sender.send('user-home-dir', appData);
 });
