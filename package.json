@@ -24,7 +24,6 @@
     "csvtojson": "^1.1.9",
     "electron": "^1.7.8",
     "history": "^4.7.2",
-    "material-design-icons": "^3.0.1",
     "prop-types": "^15.6.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
@@ -33,7 +32,8 @@
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
     "reselect": "^3.0.1",
-    "styled-jsx": "^2.0.2"
+    "scado": "0.1.1",
+    "styled-components": "^2.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -45,6 +45,7 @@
     "css-loader": "^0.28.7",
     "eslint": "^4.8.0",
     "eslint-config-airbnb": "^15.1.0",
+    "eslint-import-resolver-webpack": "^0.8.3",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.4.0",

@@ -1,8 +1,6 @@
 const path = require('path');
 
 module.exports = {
-    // target: 'electron',
-
     entry: [
         './src/index.js',
     ],
@@ -14,7 +12,8 @@ module.exports = {
 
     resolve: {
         alias: {
-            scado: path.resolve(__dirname, 'src/components/'),
+            'shared-components': path.resolve(__dirname, 'src/shared-components'),
+            routerSvc: path.resolve(__dirname, 'src/services/router'),
         },
     },
 

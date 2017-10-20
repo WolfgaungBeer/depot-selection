@@ -1,43 +1,27 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
-import { Spacing, Icon } from 'scado';
-import SideBar from './components/SideBar';
-import Main from './components/Main';
-import SideBarHeader from './components/SideBarHeader';
-import SideBarMenu from './components/SideBarMenu';
-import MenuItem from './components/MenuItem';
-import Home from '../Home';
-import Stocks from '../Stocks';
-import Depots from '../Depots';
+import { Wrapper, SideMenuSection, MainSection, Scrollable } from './styled';
+import SideMenu from '../SideMenu';
 
 const App = () => (
-    <div>
-        <SideBar>
-            <SideBarHeader icon="dashboard" title="Depot Selection" />
-            <Spacing size="3rem" top />
-            <SideBarMenu>
-                <MenuItem to="/" icon="home" text="Home" />
-                <MenuItem to="/depots" icon="pie_chart" text="Depots" />
-                <MenuItem to="/stocks" icon="show_chart" text="Aktien" />
-            </SideBarMenu>
-        </SideBar>
-        <Main>
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/depots" component={Depots} />
-                <Route path="/stocks" component={Stocks} />
-            </Switch>
-        </Main>
-        <style jsx>{`
-            div {
-                position: fixed;
-                top: 0px;
-                left: 0px;
-                width: 100%;
-                height: 100%;
-            }
-        `}</style>
-    </div>
+    <Wrapper>
+        <SideMenuSection>
+            <Scrollable>
+                <SideMenu />
+            </Scrollable>
+        </SideMenuSection>
+        <MainSection>
+            <Scrollable>
+                <Switch>
+                    <Route path="/" exact render={() => <div>home</div>} />
+                    <Route path="/depots" exact render={() => <div>depots</div>} />
+                    <Route path="/stocks" exact render={() => <div>stocks</div>} />
+                    <Route path="/depots/new" exact render={() => <div>depots new</div>} />
+                    <Route path="/stocks/new" exact render={() => <div>stocks new</div>} />
+                </Switch>
+            </Scrollable>
+        </MainSection>
+    </Wrapper>
 );
 
 export default App;
