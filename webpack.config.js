@@ -14,6 +14,8 @@ module.exports = {
         alias: {
             'shared-components': path.resolve(__dirname, 'src/shared-components'),
             routerSvc: path.resolve(__dirname, 'src/services/router'),
+            depotSvc: path.resolve(__dirname, 'src/services/depots'),
+            stockSvc: path.resolve(__dirname, 'src/services/stocks'),
         },
     },
 

@@ -17,9 +17,9 @@ const SideMenu = () => (
             <div>
                 <MenuLink icon="home" to="/">HOME</MenuLink>
                 <MenuLink icon="pie_chart" to="/depots">DEPOTS</MenuLink>
-                <MenuLink icon="show_chart" to="/stocks">AKTIEN</MenuLink>
-                <MenuLink icon="add" to="/depots/new">DEPOT ANLEGEN</MenuLink>
-                <MenuLink icon="add" to="/stocks/new">AKTIE ANLEGEN</MenuLink>
+                <MenuLink icon="add_circle_outline" to="/depots/new">NEUES DEPOT</MenuLink>
+                <MenuLink icon="show_chart" to="/stocks/list">AKTIEN</MenuLink>
+                <MenuLink icon="add_circle_outline" to="/stocks/new">NEUE AKTIE</MenuLink>
             </div>
         </Spacing>
     </div>

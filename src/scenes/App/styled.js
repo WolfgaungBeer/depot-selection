@@ -26,12 +26,3 @@ export const MainSection = styled.div`
     background-color: ${props => props.theme.app.backgroundColor};
     overflow: hidden;
 `;
-
-export const Scrollable = styled.div`
-    position: relative;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-    overflow-y: auto;
-`;

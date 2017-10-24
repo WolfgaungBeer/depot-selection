@@ -1,0 +1,3 @@
+export const ADD_STOCK = '@STOCKS/ADD_STOCK';
+export const EDIT_STOCK = '@STOCKS/EDIT_STOCK';
+export const DELETE_STOCK = '@STOCKS/DELETE_STOCK';
