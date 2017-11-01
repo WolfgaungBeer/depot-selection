@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { Router } from 'react-router-dom';
 import { Theme } from 'scado';
+import 'react-select/dist/react-select.css';
 import App from './scenes/App';
 import store from './store';
 import history from './history';
