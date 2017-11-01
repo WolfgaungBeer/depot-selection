@@ -9,9 +9,8 @@ const mapStateToProps = (state, ownProps) => ({
 
 const mapDispatchToProps = dispatch => ({
     onSubmit: (values) => {
-        console.log('VALUES');
-        console.log(values);
-        dispatch(editDepot(values));
+        const stocks = values.stocks.map(s => s.value);
+        dispatch(editDepot({ ...values, stocks }));
         push('/depots/list');
     },
 });

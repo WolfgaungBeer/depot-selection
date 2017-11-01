@@ -17,8 +17,8 @@ const defaultProps = {
 const DepotForm = ({ handleSubmit }) => (
     <Form onSubmit={handleSubmit}>
         <Field name="name" component={InputField} type="text" label="Name" required />
-        <Field name="stocks" component={MultiSelect} />
-        <Button type="submit">Anlegen!</Button>
+        <Field name="stocks" component={MultiSelect} label="Aktien:" />
+        <Button type="submit">Speichern!</Button>
     </Form>
 );
 

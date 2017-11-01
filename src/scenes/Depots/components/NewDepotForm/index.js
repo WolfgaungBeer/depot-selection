@@ -5,9 +5,8 @@ import DepotForm from '../DepotForm';
 
 const mapDispatchToProps = dispatch => ({
     onSubmit: (values) => {
-        console.log('VALUES');
-        console.log(values);
-        dispatch(addDepot(values));
+        const stocks = values.stocks.map(s => s.value);
+        dispatch(addDepot({ ...values, stocks }));
         push('/depots/list');
     },
 });

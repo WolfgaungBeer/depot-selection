@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
 export const Wrapper = styled.div`
-    margin-bottom: 0.8rem;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: ${props => (props.marginBottom ? '0.8rem' : undefined)};
 `;

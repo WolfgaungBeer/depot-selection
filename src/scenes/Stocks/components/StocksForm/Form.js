@@ -17,7 +17,7 @@ const StocksForm = ({ handleSubmit }) => (
     <Form onSubmit={handleSubmit}>
         <Field name="token" component={InputField} type="text" label="Kürzel" required />
         <Field name="name" component={InputField} type="text" label="Name" required />
-        <Button type="submit">Anlegen!</Button>
+        <Button type="submit">Speichern!</Button>
     </Form>
 );
 

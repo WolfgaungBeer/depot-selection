@@ -2,7 +2,7 @@ import React from 'react';
 import { shape, string, func } from 'prop-types';
 import { Flex, Icon, Text } from 'scado';
 import { DepotWrapper as Wrapper } from './styled';
-// import MultiSelect from '../MultiSelect';
+import MultiSelect from '../MultiSelect';
 
 const propTypes = {
     item: shape({
@@ -31,8 +31,7 @@ const DepotListItem = ({ item, editItem, deleteItem }) => (
                 <Text.Span>Name: {item.name}</Text.Span>
             </Flex>
             <Flex flex="0 1 40%" alignItems="center">
-                {/* <Text.Span>Dateipfad: {item.dataPath}</Text.Span> */}
-                <div>test</div>
+                <MultiSelect name="stocks" input={{ value: item.stocks }} multi disabled />
             </Flex>
             <Flex flex="0 1 10%" alignItems="center">
                 <Icon scale="l" onClick={editItem}>mode_edit</Icon>
