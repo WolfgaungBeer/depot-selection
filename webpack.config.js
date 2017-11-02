@@ -1,6 +1,8 @@
 const path = require('path');
 
 module.exports = {
+    target: 'electron',
+
     entry: [
         './src/index.js',
     ],
@@ -16,6 +18,7 @@ module.exports = {
             routerSvc: path.resolve(__dirname, 'src/services/router'),
             depotSvc: path.resolve(__dirname, 'src/services/depots'),
             stockSvc: path.resolve(__dirname, 'src/services/stocks'),
+            systemSvc: path.resolve(__dirname, 'src/services/system'),
         },
     },
 

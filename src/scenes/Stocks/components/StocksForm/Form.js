@@ -2,6 +2,7 @@ import React from 'react';
 import { func } from 'prop-types';
 import { reduxForm, Field } from 'redux-form';
 import { InputField, Button } from 'scado';
+import { openFileDialog } from 'systemSvc';
 import { Form } from './styled';
 import validate from './validation';
 
@@ -17,6 +18,7 @@ const StocksForm = ({ handleSubmit }) => (
     <Form onSubmit={handleSubmit}>
         <Field name="token" component={InputField} type="text" label="Kürzel" required />
         <Field name="name" component={InputField} type="text" label="Name" required />
+        <Field name="dataPath" component={InputField} type="text" label="Datei" required onClick={openFileDialog} />
         <Button type="submit">Speichern!</Button>
     </Form>
 );
