@@ -4,5 +4,5 @@ Z Marktkapitalisierung = (Eigenes Feld im Dump) * Anzahl der Aktien im Portfolio
 
 TODO:
 
--) Nur Dateinamen anstatt ganzen Pfad anzeigen.
--) Auswertungs View mit Chart
+-) Die App sollte damit umgehen können wenn der Pfad zu den Dateien nicht stimmt.
+-) Berechnungsfunktionen schreiben.

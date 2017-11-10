@@ -1,5 +1,5 @@
 import React from 'react';
-import { shape, string, func } from 'prop-types';
+import { shape, string, func, arrayOf } from 'prop-types';
 import { Flex, Icon, Text } from 'scado';
 import { DepotWrapper as Wrapper } from './styled';
 import MultiSelect from '../MultiSelect';
@@ -7,21 +7,22 @@ import MultiSelect from '../MultiSelect';
 const propTypes = {
     item: shape({
         id: string,
-        token: string,
         name: string,
-        dataPath: string,
+        stocks: arrayOf(string),
     }),
+    showCharts: func,
     editItem: func,
     deleteItem: func,
 };
 
 const defaultProps = {
     item: undefined,
+    showCharts: undefined,
     editItem: undefined,
     deleteItem: undefined,
 };
 
-const DepotListItem = ({ item, editItem, deleteItem }) => (
+const DepotListItem = ({ item, showCharts, editItem, deleteItem }) => (
     <Wrapper width="100%" height="3rem">
         <Flex justifyContent="space-between" alignItems="center">
             <Flex flex="0 1 5%" alignItems="center">
@@ -34,6 +35,7 @@ const DepotListItem = ({ item, editItem, deleteItem }) => (
                 <MultiSelect name="stocks" input={{ value: item.stocks }} multi disabled />
             </Flex>
             <Flex flex="0 1 10%" alignItems="center">
+                <Icon scale="l" onClick={showCharts}>exit_to_app</Icon>
                 <Icon scale="l" onClick={editItem}>mode_edit</Icon>
                 <Icon color="error" scale="xl" onClick={deleteItem}>clear</Icon>
             </Flex>

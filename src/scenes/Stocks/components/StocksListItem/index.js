@@ -20,6 +20,11 @@ const defaultProps = {
     deleteItem: undefined,
 };
 
+const getFilename = (path) => {
+    const parts = path.split('/');
+    return parts[parts.length - 1];
+};
+
 const StocksListItem = ({ item, editItem, deleteItem }) => (
     <Wrapper width="100%" height="3rem">
         <Flex justifyContent="space-between" alignItems="center">
@@ -33,7 +38,7 @@ const StocksListItem = ({ item, editItem, deleteItem }) => (
                 <Text.Span>Name: {item.name}</Text.Span>
             </Flex>
             <Flex flex="0 1 40%" alignItems="center">
-                <Text.Span>Dateipfad: {item.dataPath}</Text.Span>
+                <Text.Span>Datei: {getFilename(item.dataPath)}</Text.Span>
             </Flex>
             <Flex flex="0 1 10%" alignItems="center">
                 <Icon scale="l" onClick={editItem}>mode_edit</Icon>

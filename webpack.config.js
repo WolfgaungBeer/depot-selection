@@ -19,6 +19,7 @@ module.exports = {
             depotSvc: path.resolve(__dirname, 'src/services/depots'),
             stockSvc: path.resolve(__dirname, 'src/services/stocks'),
             systemSvc: path.resolve(__dirname, 'src/services/system'),
+            chartsSvc: path.resolve(__dirname, 'src/services/charts'),
         },
     },
 

@@ -8,7 +8,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-    editItem: item => push(`/depots/edit/${item.id}`),
+    showCharts: id => push(`/charts/${id}`),
+    editItem: id => push(`/depots/edit/${id}`),
     deleteItem: id => dispatch(deleteDepot(id)),
 });
 

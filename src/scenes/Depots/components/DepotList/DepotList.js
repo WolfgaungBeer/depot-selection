@@ -7,28 +7,30 @@ import ListItem from '../DepotListItem';
 const propTypes = {
     items: arrayOf(shape({
         id: string,
-        token: string,
         name: string,
-        dataPath: string,
+        stocks: arrayOf(string),
     })),
+    showCharts: func,
     editItem: func,
     deleteItem: func,
 };
 
 const defaultProps = {
     items: undefined,
+    showCharts: undefined,
     editItem: undefined,
     deleteItem: undefined,
 };
 
-const DepotList = ({ items, editItem, deleteItem }) => (
+const DepotList = ({ items, showCharts, editItem, deleteItem }) => (
     <Flex justifyContent="center" alignItems="center">
         <Wrapper width="95%" height="95%">
             {items && items.map(i =>
                 (<ListItem
                     key={i.id}
                     item={i}
-                    editItem={() => editItem(i)}
+                    showCharts={() => showCharts(i.id)}
+                    editItem={() => editItem(i.id)}
                     deleteItem={() => deleteItem(i.id)}
                 />),
             )}

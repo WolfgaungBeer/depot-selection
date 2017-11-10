@@ -4,7 +4,7 @@ import { push } from 'routerSvc';
 import DepotForm from '../DepotForm';
 
 const mapStateToProps = (state, ownProps) => ({
-    initialValues: depotSelector(state, ownProps),
+    initialValues: depotSelector(state, ownProps.match.params.id),
 });
 
 const mapDispatchToProps = dispatch => ({

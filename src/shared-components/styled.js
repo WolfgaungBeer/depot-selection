@@ -20,5 +20,6 @@ export const RelativeWrapper = styled.div`
     left: 0px;
     width: 100%;
     height: 100%;
+    overflow-x: hidden;
     overflow-y: ${props => props.overflow};
 `;

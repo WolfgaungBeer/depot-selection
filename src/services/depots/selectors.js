@@ -1,8 +1,7 @@
 import { createSelector } from 'reselect';
 
 const depotsFromState = state => state.depots;
-
-const depotFromState = (state, ownProps) => state.depots.find(s => s.id === ownProps.match.params.id);
+const depotFromState = (state, id) => state.depots.find(s => s.id === id);
 
 export const depotsSelector = createSelector(
     depotsFromState,
