@@ -1,14 +1,9 @@
 import React from 'react';
-import { arrayOf, shape, string, func } from 'prop-types';
+import { func } from 'prop-types';
 import { Flex } from 'scado';
 import { Wrapper, Scrollable } from 'shared-components';
 
 const propTypes = {
-    depot: shape({
-        id: string,
-        name: string,
-        stocks: arrayOf(string),
-    }),
     loadChart: func,
 };
 
@@ -24,8 +19,8 @@ class BubbleChart extends React.PureComponent {
     }
 
     componentDidMount() {
-        const { loadChart, depot } = this.props;
-        this.chart = loadChart('bubble-chart', depot);
+        const { loadChart } = this.props;
+        this.chart = loadChart('bubble-chart');
     }
 
     componentWillUnmount() {

@@ -1,29 +1,12 @@
 import fs from 'fs';
 import Chart from 'chart.js';
 import csvjson from 'csvjson';
+import getStockChartData from './stocks';
+import getDepotChartData from './depots';
+import getRandomNumberSet from './random';
 
-export { default as getStockChartData } from './stocks';
-export { default as getDepotChartData } from './depots';
-
-export const testData = {
-    labels: ['test1', 'test2', 'test3'],
-    datasets: [{
-        label: 'test',
-        backgroundColor: [
-            'rgba(255, 99, 132, 0.2)',
-            'rgba(54, 162, 235, 0.2)',
-            'rgba(255, 206, 86, 0.2)',
-        ],
-        borderColor: [
-            'rgba(255, 99, 132, 1)',
-            'rgba(54, 162, 235, 1)',
-            'rgba(255, 206, 86, 1)',
-        ],
-        data: [{ x: 1, y: 1, r: 10 }, { x: 2, y: 2, r: 5 }, { x: 1, y: 3, r: 15 }],
-    }],
-};
-
-export const testOptions = {};
+export * from './actions';
+export { default as reducer } from './reducer';
 
 export const loadChart = (canvasId, type, data, options) => {
     const ctx = document.getElementById(canvasId).getContext('2d');
@@ -35,4 +18,22 @@ export const loadStockData = (path) => {
     const csvData = fs.readFileSync(path, 'utf8');
     const res = csvjson.toObject(csvData);
     return res;
+};
+
+export const getChartDataByDepot = (depot) => {
+    const stocksData = depot.stocks.map(stock => getStockChartData(stock));
+
+    const variantCount = 100;
+    const data = [];
+
+    for (let depot = 0; depot < variantCount; depot++) { // eslint-disable-line
+        const percentData = getRandomNumberSet(100, stocksData.length);
+        const withPercent = [];
+        for (let stock = 0; stock < stocksData.length; stock++) { // eslint-disable-line
+            withPercent[stock] = { ...stocksData[stock], percent: percentData[stock] };
+        }
+        data[depot] = getDepotChartData(withPercent, depot);
+    }
+
+    return { depot, data };
 };

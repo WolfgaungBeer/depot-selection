@@ -4,7 +4,6 @@ import MenuLink from './MenuLink';
 
 const isActive = (state, ownProps) => {
     const route = routeSelector(state);
-    if (ownProps.to === '/' && !route.pathname) return true;
     return route.pathname === ownProps.to;
 };
 

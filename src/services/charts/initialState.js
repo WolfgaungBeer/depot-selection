@@ -1,0 +1,1 @@
+export default { selectedDepot: null };

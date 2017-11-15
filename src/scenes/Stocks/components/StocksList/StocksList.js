@@ -1,6 +1,6 @@
 import React from 'react';
 import { arrayOf, shape, string, func } from 'prop-types';
-import { Flex } from 'scado';
+import { Flex, Text } from 'scado';
 import { Wrapper } from 'shared-components';
 import ListItem from '../StocksListItem';
 
@@ -24,7 +24,8 @@ const defaultProps = {
 const StocksList = ({ items, editItem, deleteItem }) => (
     <Flex justifyContent="center" alignItems="center">
         <Wrapper width="95%" height="95%">
-            {items && items.map(i =>
+            {items.length < 1 && <Text.H2>Rechts oben klicken um eine neue Aktie anzulegen</Text.H2>}
+            {items.length > 0 && items.map(i =>
                 (<ListItem
                     key={i.id}
                     item={i}

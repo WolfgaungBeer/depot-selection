@@ -59,10 +59,17 @@ const getX = (yearYields) => {
     return xValue;
 };
 
-const getStockChartData = (data) => {
+const getStockChartData = (stock) => {
+    const { data } = stock;
     const preparedData = prepareData(data);
     const yearYields = getYearYields(preparedData);
-    return { x: getX(yearYields), y: getY(yearYields) };
+    return {
+        id: stock.id,
+        token: stock.token,
+        name: stock.name,
+        x: getX(yearYields),
+        y: getY(yearYields),
+    };
 };
 
 export default getStockChartData;
