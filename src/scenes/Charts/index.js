@@ -5,6 +5,7 @@ import { Flex, Grid, Panel, Icon } from 'scado';
 import { Wrapper, PageHeader } from 'shared-components';
 import gridProps from './gridProps';
 import BubbleChart from './components/BubbleChart';
+import DoughnutChart from './components/DoughnutChart';
 
 const propTypes = {
     match: shape({
@@ -37,7 +38,7 @@ const Charts = ({ match }) => (
                 </Grid.Child>
                 <Grid.Child area="detail-left">
                     <Panel backgroundColor="white" shadow="s">
-                        <span>detail-left</span>
+                        <DoughnutChart />
                     </Panel>
                 </Grid.Child>
                 <Grid.Child area="detail-right">

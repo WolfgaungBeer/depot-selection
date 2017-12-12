@@ -59,6 +59,14 @@ const getX = (yearYields) => {
     return xValue;
 };
 
+const getR = (data) => {
+    const yearChunks = getYearChunks(data);
+    const lastYearArray = yearChunks[yearChunks.length - 1];
+    const sum = lastYearArray.reduce((acc, set) => acc + parseFloat(set.Volume), 0);
+    const average = Math.round(sum / lastYearArray.length);
+    return average;
+};
+
 const getStockChartData = (stock) => {
     const { data } = stock;
     const preparedData = prepareData(data);
@@ -69,6 +77,7 @@ const getStockChartData = (stock) => {
         name: stock.name,
         x: getX(yearYields),
         y: getY(yearYields),
+        r: getR(preparedData),
     };
 };
 

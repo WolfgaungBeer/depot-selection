@@ -7,6 +7,7 @@ import getRandomNumberSet from './random';
 
 export * from './actions';
 export { default as reducer } from './reducer';
+export const selectedDepotSelector = state => state.chart.selectedDepot;
 
 export const loadChart = (canvasId, type, data, options) => {
     const ctx = document.getElementById(canvasId).getContext('2d');
@@ -23,7 +24,7 @@ export const loadStockData = (path) => {
 export const getChartDataByDepot = (depot) => {
     const stocksData = depot.stocks.map(stock => getStockChartData(stock));
 
-    const variantCount = 100;
+    const variantCount = 200;
     const data = [];
 
     for (let depot = 0; depot < variantCount; depot++) { // eslint-disable-line
