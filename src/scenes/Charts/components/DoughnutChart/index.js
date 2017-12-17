@@ -12,7 +12,6 @@ const getData = (selectedDepot) => {
         selectedDepot.stocksInfo.forEach((stock) => {
             data.push(stock.percent);
             backgroundColor.push(`rgba(${rand()}, ${rand()}, ${rand()}, 1)`);
-            // backgroundColor.push('rgba(255, 99, 132, 1)');
             labels.push(stock.token);
         });
     }
@@ -22,9 +21,10 @@ const getData = (selectedDepot) => {
 const mapStateToProps = (state) => {
     const selectedDepot = selectedDepotSelector(state);
     return {
+        selectedDepot,
         loadChart: (canvasId) => {
             const data = getData(selectedDepot);
-            return loadChart(canvasId, 'doughnut', data, {});
+            return loadChart(canvasId, 'doughnut', data, { events: ['click'] });
         },
     };
 };

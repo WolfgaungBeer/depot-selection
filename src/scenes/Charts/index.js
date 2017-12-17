@@ -5,6 +5,7 @@ import { Flex, Grid, Panel, Icon } from 'scado';
 import { Wrapper, PageHeader } from 'shared-components';
 import gridProps from './gridProps';
 import BubbleChart from './components/BubbleChart';
+import ChartInfo from './components/ChartInfo';
 import DoughnutChart from './components/DoughnutChart';
 
 const propTypes = {
@@ -38,12 +39,12 @@ const Charts = ({ match }) => (
                 </Grid.Child>
                 <Grid.Child area="detail-left">
                     <Panel backgroundColor="white" shadow="s">
-                        <DoughnutChart />
+                        <ChartInfo />
                     </Panel>
                 </Grid.Child>
                 <Grid.Child area="detail-right">
                     <Panel backgroundColor="white" shadow="s">
-                        <span>detail-right</span>
+                        <DoughnutChart />
                     </Panel>
                 </Grid.Child>
             </Grid.Parent>

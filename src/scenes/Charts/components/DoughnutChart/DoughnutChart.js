@@ -1,13 +1,15 @@
 import React from 'react';
-import { func } from 'prop-types';
+import { shape, func } from 'prop-types';
 import { Flex } from 'scado';
 import { Wrapper, Scrollable } from 'shared-components';
 
 const propTypes = {
+    selectedDepot: shape({}),
     loadChart: func,
 };
 
 const defaultProps = {
+    selectedDepot: undefined,
     loadChart: undefined,
 };
 
@@ -18,14 +20,13 @@ class BubbleChart extends React.PureComponent {
     }
 
     componentDidMount() {
-        const { loadChart } = this.props;
-        this.chart = loadChart('doughnut-chart');
+        const { selectedDepot, loadChart } = this.props;
+        if (selectedDepot) this.chart = loadChart('doughnut-chart');
     }
 
     componentWillReceiveProps(nextProps) {
-        const { loadChart } = nextProps;
-        if (this.chart) this.chart.destroy();
-        this.chart = loadChart('doughnut-chart');
+        const { selectedDepot, loadChart } = nextProps;
+        if (selectedDepot) this.chart = loadChart('doughnut-chart');
     }
 
     componentWillUnmount() {
@@ -33,9 +34,12 @@ class BubbleChart extends React.PureComponent {
     }
 
     render() {
+        const { selectedDepot } = this.props;
+        if (!selectedDepot) return null;
+
         return (
             <Flex justifyContent="center" alignItems="center">
-                <Wrapper width="75%" height="95%">
+                <Wrapper width="65%" height="85%">
                     <Scrollable>
                         <canvas id="doughnut-chart" />
                     </Scrollable>

@@ -46,6 +46,7 @@ const mergeProps = (stateProps, dispatchProps) => Object.assign({}, {
         const options = getOptions(dispatchProps.setSelectedDepot);
         return loadChart(canvasId, 'bubble', data, options);
     },
+    unsetSelectedDepot: () => dispatchProps.unsetSelectedDepot(),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(BubbleChart);
